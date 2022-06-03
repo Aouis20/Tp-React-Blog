@@ -26,6 +26,9 @@ body {
 .topnav .login {
     display: flex;
     justify-content: flex-end;
+    color: white;
+    margin-right: 10px;
+    font-weight: bold;
 }
 
 /* CHRONIQUEFORM STYLE */

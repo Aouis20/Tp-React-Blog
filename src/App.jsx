@@ -26,8 +26,8 @@ function App() {
           <Link to="/chroniques">Chroniques</Link>
           <Link to="/profil">Profil</Link>
           <div className='login'>
-            <Link to="/inscription">S'inscire</Link>
-            <Link to="/connexion">Se connecter</Link>
+            {!isLogin && <Link to="/inscription">S'inscire</Link>}
+            {!isLogin ? <Link to="/connexion">Se connecter</Link> : (<p> Se déconnecter</p>)}
           </div>
         </div>
 
