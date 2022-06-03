@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: wheat;
+}
+  
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav .login {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* CHRONIQUEFORM STYLE */
+
+img {
+    width: 100%;
+}
+
+p i {
+    color: grey;
+}
+
+h1, h2 {
+    text-align: center;
+}
+.divform {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.divform label {
+    text-align: left;
+    display: block;
+}
+
+.divform h2 {
+    font-size: 30px;
+}
+
+.divform input, .divform textarea, .divform select {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid ;
+    box-sizing: border-box;
+    display: block;
+}
+
+.divform button {
+    background: #87CEEB;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    padding: 14px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.chronique {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.chroniqueStyle {
+    background-color: rgba(235, 233, 233, 0.699);
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.chroniqueStyle div {
+    margin: 10px 6px;
+}
+
+.chroniqueList {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 60px;
+}
+
+/* Inscription */
+.signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 600px;
+    height: 300px;
+    padding: 30px;
+    border-radius: 30px;
+}
