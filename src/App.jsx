@@ -15,10 +15,6 @@ function App() {
       username: 'Aouis',
       mdp: 'aze'
     },
-    {
-      username: 'Aouis2',
-      mdp: 'aze'
-    },
   ])
 
   return (
@@ -38,7 +34,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/pages" element={<Pages />}></Route>
-            <Route path="/profil" element={<Profil isLogin={isLogin} />}></Route>
+            <Route path="/profil" element={<Profil isLogin={isLogin}/>}></Route>
             <Route path="/chroniques" element={<Chroniques isLogin={isLogin} />}></Route>
             <Route path="/inscription" element={<Inscription setComptes={setComptes} />}></Route>
             <Route path="/connexion" element={<Connexion setIsLogin={setIsLogin} comptes={comptes} />}></Route>

@@ -3,7 +3,7 @@ import ChroniquesForm from '../components/ChroniquesForm'
 import Chronique from '../components/Chronique'
 import '../style.css'
 
-const Chroniques = () => {
+const Chroniques = ({isLogin}) => {
 
   const [chroniqueArray, setChroniqueArray] = useState([['Un titre', 'Aouis', 'Action', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'], ['Un autre titre', 'Tom', 'Horreur', 'Ceci est un contenu de test...']])
   const [chroniqueModify, setChroniqueModify] = useState(false)
@@ -25,6 +25,7 @@ const Chroniques = () => {
                   setChroniqueModify={setChroniqueModify}
                   setChroniqueToModify={setChroniqueToModify}
                   index={index}
+                  isLogin={isLogin}
                 />
               ))
             }
@@ -37,6 +38,7 @@ const Chroniques = () => {
               chroniqueModify={chroniqueModify}
               setChroniqueModify={setChroniqueModify}
               chroniqueToModify={chroniqueToModify}
+              isLogin={isLogin}
             />
           }
       </div>

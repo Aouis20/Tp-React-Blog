@@ -8,9 +8,10 @@ const Connexion = ({ setIsLogin, comptes }) => {
 
   const handleConnect = (e) => {
     e.preventDefault()
+    localStorage.setItem('username', username)
     comptes.forEach(compte => {
       compte.username == username && compte.mdp == mdp &&
-      console.log(username, mdp)
+      alert('Connexion réussie')
       return setIsLogin(true)
     });
   }

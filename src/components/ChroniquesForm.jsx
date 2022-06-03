@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import '../style.css'
 
-const ChroniquesForm = ({ chroniqueArray, setChroniqueArray, setChroniqueModify, chroniqueModify, chroniqueToModify }) => {
+const ChroniquesForm = ({ chroniqueArray, setChroniqueArray, setChroniqueModify, chroniqueModify, chroniqueToModify, isLogin }) => {
 
   const [titre, setTitre] = useState('')
   const [auteur, setAuteur] = useState('')
   const [genre, setGenre] = useState('')
   const [contenu, setContenu] = useState('')
+
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -24,6 +25,7 @@ const ChroniquesForm = ({ chroniqueArray, setChroniqueArray, setChroniqueModify,
   const handleModify = e => {
     e.preventDefault()
     setChroniqueArray(oldState => {
+      console.log(titre)
       const newState = [...oldState]
       newState[chroniqueArray.indexOf(chroniqueToModify)] = [titre, auteur, genre, contenu]
       return newState
@@ -62,16 +64,15 @@ const ChroniquesForm = ({ chroniqueArray, setChroniqueArray, setChroniqueModify,
               <label>Contenu</label>
               <textarea type="text" value ={contenu} onChange={e => setContenu(e.target.value)} required />
 
-              <button type="submit">Ajouter</button>
+              {isLogin && <button type="submit">Ajouter</button>}
             </form>
           </>
         ) : (
           <>
             <h2>Modifer la chronique :</h2>
             <form onSubmit={handleModify} className="divform">
-
               <label>Titre</label>
-              <input type="text" value ={titre}  onChange={e => setTitre(e.target.value)} placeholder={chroniqueToModify[0]} />
+              <input type="text" value ={titre} onChange={e => setTitre(e.target.value)} placeholder={chroniqueToModify[0]} />
 
               <label>Auteur</label>
               <input type="text" value ={auteur} onChange={e => setAuteur(e.target.value)} placeholder={chroniqueToModify[1]} />
@@ -89,7 +90,7 @@ const ChroniquesForm = ({ chroniqueArray, setChroniqueArray, setChroniqueModify,
               <label>Contenu</label>
               <textarea type="text" value ={contenu} onChange={e => setContenu(e.target.value)} placeholder={chroniqueToModify[3]} />
 
-              <button type="submit">Modifier</button>
+              {isLogin && <button type="submit">Modifier</button>}
             </form>
           </>
         )

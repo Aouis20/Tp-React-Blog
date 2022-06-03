@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../style.css'
 
-const Chronique = ({ chronique, index, setChroniqueArray, setChroniqueModify, setChroniqueToModify }) => {
+const Chronique = ({ chronique, index, setChroniqueArray, setChroniqueModify, setChroniqueToModify, isLogin }) => {
 
   const date = new Date()
   const today = date.getDate() + "/" + (date.getMonth()+1)  + "/" + date.getFullYear() + " à "  + date.getHours() + ":"  + date.getMinutes()
@@ -28,8 +28,8 @@ const Chronique = ({ chronique, index, setChroniqueArray, setChroniqueModify, se
         <u>{chronique[2]}</u>
         <p>{chronique[3]}</p>
         <p><i>Publié par {chronique[1]} le {today} </i></p>
-        <button onClick={handleDelete}>Supprimer</button>
-        <button onClick={handleModify}>Modifier</button>
+        {isLogin && <button onClick={handleDelete}>Supprimer</button>}
+        {isLogin && <button onClick={handleModify}>Modifier</button>}
       </div>
     </div>
   )
