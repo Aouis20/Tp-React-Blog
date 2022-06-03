@@ -1,23 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Connexion = () => {
+const Connexion = ({ setIsLogin, comptes }) => {
+  
+  const [username, setUsername] = useState('')
+  const [mdp, setMdp] = useState('')
 
-    const handleConnect = () => {
-
-    }
+  const handleConnect = (e) => {
+    e.preventDefault()
+    comptes.forEach(compte => {
+      compte.username == username && compte.mdp == mdp &&
+      console.log(username, mdp)
+      return setIsLogin(true)
+    });
+  }
 
   return (
     <div className='divform'>
       <div className='signup'>
         <h2>Connexion</h2>
         <form onSubmit={handleConnect}>
-          <input type="text" placeholder='Username'/>
-          <input type="text" placeholder='Mot de passe'/>
+          <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder='Username'/>
+          <input type="text" value={mdp} onChange={e => setMdp(e.target.value)} placeholder='Mot de passe'/>
           <button type='submit'>Se connecter</button>
         </form>
         <p>Pas de compte ? <span><Link to="/inscription">S'inscire</Link></span></p>
-        
       </div>
     </div>
   )
