@@ -23,7 +23,7 @@ const Identifiants = ({username, mdp, type}) => {
                     })
                 ) : (
                     console.log('oui')
-                )z
+                )
             }
         </div>
     )
