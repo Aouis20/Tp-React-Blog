@@ -88,7 +88,7 @@ const ChroniquesForm = ({ chroniqueArray, setChroniqueArray, setChroniqueModify,
               </select>
 
               <label>Contenu</label>
-              <textarea type="text" value ={contenu} onChange={e => setContenu(e.target.value)} placeholder={chroniqueToModify[3]} />
+              <textarea type="text" value={contenu} onChange={e => setContenu(e.target.value)} placeholder={chroniqueToModify[3]} />
 
               {isLogin && <button type="submit">Modifier</button>}
             </form>
